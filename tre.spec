@@ -24,13 +24,21 @@ wyrażeń regularnych, zgodną ze standardem POSIX oraz oferującą
 kilka przydatnych funkcji, jak np. dopasowywanie przybliżone
 (rozmyte).
 
+Pakiet zawiera także narzędzie agrep (przybliżony grep) do
+przybliżonego dopasowywania przy użyciu wyrażeń regularnych w
+stylu grepa.
+
 %package devel
 Summary:	Header files for tre library
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki tre
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files for tre library.
+
+%description devel -l pl.UTF-8
+Pliki nagłówkowe biblioteki tre.
 
 %prep
 %setup -q
