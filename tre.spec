@@ -2,7 +2,7 @@ Summary:	Approximate grep from TRE
 Summary(pl.UTF-8):	grep z wyszukiwaniem przybliżonym
 Name:		tre
 Version:	0.7.5
-Release:	0.4
+Release:	1
 License:	LGPL
 Group:		Applications
 Source0:	http://laurikari.net/tre/%{name}-%{version}.tar.bz2
@@ -19,14 +19,13 @@ This package also contains agrep (approximate grep) tool for
 approximate regexp matching in the style of grep.
 
 %description -l pl.UTF-8
-TRE jest lekką i wydajną biblioteką dopasowań przy użyciu
-wyrażeń regularnych, zgodną ze standardem POSIX oraz oferującą
-kilka przydatnych funkcji, jak np. dopasowywanie przybliżone
-(rozmyte).
+TRE jest lekką i wydajną biblioteką dopasowań przy użyciu wyrażeń
+regularnych, zgodną ze standardem POSIX oraz oferującą kilka
+przydatnych funkcji, jak np. dopasowywanie przybliżone (rozmyte).
 
 Pakiet zawiera także narzędzie agrep (przybliżony grep) do
-przybliżonego dopasowywania przy użyciu wyrażeń regularnych w
-stylu grepa.
+przybliżonego dopasowywania przy użyciu wyrażeń regularnych w stylu
+grepa.
 
 %package devel
 Summary:	Header files for tre library
