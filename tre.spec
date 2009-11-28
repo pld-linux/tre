@@ -1,12 +1,12 @@
 Summary:	Approximate grep from TRE
 Summary(pl.UTF-8):	grep z wyszukiwaniem przybliżonym
 Name:		tre
-Version:	0.7.6
+Version:	0.8.0
 Release:	1
-License:	LGPL
+License:	BSD
 Group:		Applications
 Source0:	http://laurikari.net/tre/%{name}-%{version}.tar.bz2
-# Source0-md5:	ada884f6524093aa7d4961f0c97dfe01
+# Source0-md5:	b4d3232593dadf6746f4727bdda20b41
 URL:		http://laurikari.net/tre/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
