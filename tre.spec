@@ -1,5 +1,5 @@
-Summary:	Approximate grep from TRE
-Summary(pl.UTF-8):	grep z wyszukiwaniem przybliżonym
+Summary:	TRE: approximate regex matching
+Summary(pl.UTF-8):	TRE - przybliżone dopasowywanie wyrażeń regularnych
 Name:		tre
 Version:	0.8.0
 Release:	1
@@ -65,11 +65,12 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog NEWS README THANKS TODO
 %attr(755,root,root) %{_bindir}/agrep
 %attr(755,root,root) %{_libdir}/libtre.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libtre.so.5
 %{_mandir}/man1/agrep.1*
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libtre.so
 %{_libdir}/libtre.la
-%{_includedir}/%{name}
+%{_includedir}/tre
 %{_pkgconfigdir}/tre.pc
