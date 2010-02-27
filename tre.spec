@@ -1,3 +1,7 @@
+#
+# Conditional build:
+%bcond_without	static_libs	# don't build static lirbary
+#
 Summary:	TRE: approximate regex matching
 Summary(pl.UTF-8):	TRE - przybliżone dopasowywanie wyrażeń regularnych
 Name:		tre
@@ -8,6 +12,8 @@ Group:		Applications
 Source0:	http://laurikari.net/tre/%{name}-%{version}.tar.bz2
 # Source0-md5:	b4d3232593dadf6746f4727bdda20b41
 URL:		http://laurikari.net/tre/
+Provides:	agrep
+Obsoletes:	agrep
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -39,11 +45,24 @@ Header files for tre library.
 %description devel -l pl.UTF-8
 Pliki nagłówkowe biblioteki tre.
 
+%package static
+Summary:	Static tre library
+Summary(pl.UTF-8):	Statyczna bibloteka tre
+Group:		Development/Libraries
+Requires:	%{name}-devel = %{version}-%{release}
+
+%description static
+Static tre library.
+
+%description static -l pl.UTF-8
+Statyczna bibloteka tre.
+
 %prep
 %setup -q
 
 %build
-%configure
+%configure \
+	%{?with_static_libs:--enable-static}
 %{__make}
 
 %install
@@ -74,3 +93,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libtre.la
 %{_includedir}/tre
 %{_pkgconfigdir}/tre.pc
+
+%files static
+%defattr(644,root,root,755)
+%{_libdir}/libtre.a
