@@ -1,7 +1,7 @@
 #
 # Conditional build:
 %bcond_without	static_libs	# don't build static lirbary
-#
+
 Summary:	TRE: approximate regex matching
 Summary(pl.UTF-8):	TRE - przybliżone dopasowywanie wyrażeń regularnych
 Name:		tre
@@ -94,6 +94,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/tre
 %{_pkgconfigdir}/tre.pc
 
+%if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/libtre.a
+%endif
