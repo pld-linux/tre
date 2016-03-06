@@ -8,7 +8,8 @@ Name:		tre
 Version:	0.8.0
 Release:	3
 License:	BSD
-Group:		Applications
+Group:		Applications/Text
+#Source0Download: http://laurikari.net/tre/download/
 Source0:	http://laurikari.net/tre/%{name}-%{version}.tar.bz2
 # Source0-md5:	b4d3232593dadf6746f4727bdda20b41
 URL:		http://laurikari.net/tre/
