@@ -62,6 +62,7 @@ Statyczna bibloteka tre.
 %setup -q
 
 %build
+cp -f /usr/share/automake/config.sub utils
 %configure \
 	%{?with_static_libs:--enable-static}
 %{__make}
