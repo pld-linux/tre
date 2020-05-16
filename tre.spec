@@ -13,6 +13,7 @@ Group:		Applications/Text
 Source0:	http://laurikari.net/tre/%{name}-%{version}.tar.bz2
 # Source0-md5:	b4d3232593dadf6746f4727bdda20b41
 URL:		http://laurikari.net/tre/
+BuildRequires:	automake
 Provides:	agrep
 Obsoletes:	agrep
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
