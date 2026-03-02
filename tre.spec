@@ -6,7 +6,7 @@ Summary:	TRE: approximate regex matching
 Summary(pl.UTF-8):	TRE - przybliżone dopasowywanie wyrażeń regularnych
 Name:		tre
 Version:	0.8.0
-Release:	3
+Release:	4
 License:	BSD
 Group:		Applications/Text
 #Source0Download: http://laurikari.net/tre/download/
