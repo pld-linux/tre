@@ -5,14 +5,14 @@
 Summary:	TRE: approximate regex matching
 Summary(pl.UTF-8):	TRE - przybliżone dopasowywanie wyrażeń regularnych
 Name:		tre
-Version:	0.8.0
-Release:	4
+Version:	0.9.0
+Release:	1
 License:	BSD
 Group:		Applications/Text
 #Source0Download: http://laurikari.net/tre/download/
-Source0:	http://laurikari.net/tre/%{name}-%{version}.tar.bz2
-# Source0-md5:	b4d3232593dadf6746f4727bdda20b41
-URL:		http://laurikari.net/tre/
+Source0:	https://github.com/laurikari/tre/releases/download/v%{version}/%{name}-%{version}.tar.gz
+# Source0-md5:	59afb5c5c399aa5c95f44c9da1c48803
+URL:		https://github.com/laurikari/tre/
 BuildRequires:	automake
 Provides:	agrep
 Obsoletes:	agrep
@@ -84,15 +84,15 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README THANKS TODO
+%doc AUTHORS NEWS README.md THANKS TODO
 %attr(755,root,root) %{_bindir}/agrep
 %attr(755,root,root) %{_libdir}/libtre.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libtre.so.5
+%ghost %{_libdir}/libtre.so.5
 %{_mandir}/man1/agrep.1*
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libtre.so
+%{_libdir}/libtre.so
 %{_libdir}/libtre.la
 %{_includedir}/tre
 %{_pkgconfigdir}/tre.pc
