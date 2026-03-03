@@ -1,15 +1,15 @@
 #
 # Conditional build:
-%bcond_without	static_libs	# don't build static lirbary
+%bcond_without	static_libs	# static library
 
 Summary:	TRE: approximate regex matching
 Summary(pl.UTF-8):	TRE - przybliżone dopasowywanie wyrażeń regularnych
 Name:		tre
 Version:	0.9.0
-Release:	1
+Release:	2
 License:	BSD
 Group:		Applications/Text
-#Source0Download: http://laurikari.net/tre/download/
+#Source0Download: https://github.com/laurikari/tre/releases
 Source0:	https://github.com/laurikari/tre/releases/download/v%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	59afb5c5c399aa5c95f44c9da1c48803
 URL:		https://github.com/laurikari/tre/
@@ -74,6 +74,9 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+# obsoleted by pkg-config
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libtre.la
+
 %find_lang %{name}
 
 %clean
@@ -86,14 +89,13 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS NEWS README.md THANKS TODO
 %attr(755,root,root) %{_bindir}/agrep
-%attr(755,root,root) %{_libdir}/libtre.so.*.*.*
+%{_libdir}/libtre.so.*.*.*
 %ghost %{_libdir}/libtre.so.5
 %{_mandir}/man1/agrep.1*
 
 %files devel
 %defattr(644,root,root,755)
 %{_libdir}/libtre.so
-%{_libdir}/libtre.la
 %{_includedir}/tre
 %{_pkgconfigdir}/tre.pc
 
